@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'emberjs-webapp',
     environment,
-    rootURL: '/',
+    rootURL: '/emberjs-webapp',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
