@@ -1,0 +1,43 @@
+<div class="container h-100">
+    <div class="htop">
+        <h2 class="text-center">Спикеры</h2>
+        <div class="form-row navbar-panel justify-content-end">
+            <div class="col-4 text-right">
+                {{!--
+                <input class="form-control" type="search" placeholder="ФИО" aria-label="Спикер">
+                {{input type="text" placeholder="Search by Author Name" value=search}}
+                --}}
+                {{!-- <Input @type="text" placeholder="ФИО" class="form-control" aria-label="Спикер" @value={{search}}/> --}}
+                <input type="text" placeholder="ФИО" class="form-control" aria-label="Спикер" id="searchString" value="{{searchQuery}}" oninput={{action "setSearchQuery" value="target.value"}} />
+            </div>
+            <div class="col-mb-auto text-right">
+                {{!-- <button class="btn btn-outline-primary" type="submit">Найти</button> --}}
+                <button type="button" class="btn btn-outline-primary" id="searchAction" onclick={{action "searchSpeacker" searchQuery}}>Найти</button>
+                <LinkTo @route="create.speaker" class="btn btn-outline-primary">Создать</LinkTo>
+            </div>
+        </div>
+        {{#if this.isLoading}}
+                <div class="welcome-page">
+                    <img src="./loading.gif" alt="">
+                </div>
+        {{else if this.isError}}
+                <div class="welcome-page">
+                    <img src="./error.gif" alt="">
+                </div>
+        {{else}}
+            <div class="row row-cols-1 row-cols-md-3">
+                 {{#each this.model as |speaker|}}
+                     <SpeakerItem
+                            @lastName={{speaker.lastName}}
+                            @firstName={{speaker.firstName}}
+                            @secName={{speaker.secName}}
+                            @speakerId={{speaker.id}}
+                            @deleteSpeaker={{this.deleteSpeaker}}
+                      />
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+</div>
+
+{{outlet}}

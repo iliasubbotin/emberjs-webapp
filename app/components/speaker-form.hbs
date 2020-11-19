@@ -1,0 +1,36 @@
+<form {{on "submit" @saveSpeaker}} class="edit-form">
+    <div class="form-group row">
+        <label for="inputSurname" class="col-sm-2 col-form-label">Фамилия:</label>
+        <div class="col-sm-10">
+            {{!-- для двустороннего биндинга данных
+            старая реализация {{input type="text" placeholder="Введите фамилию" class="form-control form-control-lg" id="inputSurname" value=this.model.lastName}}
+            новая версия <Input @type="text" placeholder="Введите фамилию" class="form-control form-control-lg" id="inputSurname" @value={{this.model.lastName}}/>
+            а так же <input type="text" placeholder="Введите фамилию" class="form-control form-control-lg" id="inputSurname" value="{{this.model.lastName}}" oninput={{action (mut this.model.lastName) value="target.value"}} />
+            --}}
+            {{!--<input type="text" placeholder="Введите фамилию" class="form-control form-control-lg" id="inputSurname" value="{{this.model.lastName}}" oninput={{action "changeLastName" value="target.value"}} /> --}}
+            <input type="text" placeholder="Введите фамилию" class="form-control form-control-lg" id="inputSurname" value="{{@lastName}}" oninput={{action (mut @lastName) value="target.value"}} />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputName" class="col-sm-2 col-form-label">Имя:</label>
+        <div class="col-sm-10">
+            <input type="text" placeholder="Введите имя" class="form-control form-control-lg" id="inputName" value="{{@firstName}}" oninput={{action (mut @firstName) value="target.value"}} />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPatronymic" class="col-sm-2 col-form-label big">Отчество:</label>
+        <div class="col-sm-10">
+            <input type="text" placeholder="Введите отчество" class="form-control form-control-lg" id="inputPatronymic" value="{{@secName}}" oninput={{action (mut @secName) value="target.value"}} />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-6">
+            <button type="submit" class="btn btn-outline-primary btn-lg">Сохранить</button>
+        </div>
+        <div class="col-6 text-right">
+            <LinkTo @route="speakers" @class="btn btn-outline-secondary btn-lg">Отмена</LinkTo>
+        </div>
+    </div>
+</form>
+
+{{yield}}

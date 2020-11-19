@@ -1,0 +1,15 @@
+<div class="htop">
+    <h2 class="text-center">Добавление книги</h2>
+    <BookForm
+        @bookName={{this.model.bookName}}
+        @authorFirstName={{this.model.authorFirstName}}
+        @authorLastName={{this.model.authorLastName}}
+        @pageNumber={{this.model.pageNumber}}
+        @rating={{this.model.rating}}
+        @remarkURL={{this.model.remarkURL}}
+        @tags={{this.model.tags}}
+        @saveBook={{this.saveBook}}
+    />
+</div>
+
+{{outlet}}

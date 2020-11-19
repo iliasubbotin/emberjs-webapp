@@ -1,0 +1,11 @@
+<div class="htop">
+    <h2 class="text-center">Редактирование спикера: {{this.model.firstName}} {{this.model.lastName}}</h2>
+    <SpeakerForm
+            @firstName={{this.model.firstName}}
+            @lastName={{this.model.lastName}}
+            @secName={{this.model.secName}}
+            @saveSpeaker={{this.saveSpeaker}}
+            />
+</div>
+
+{{outlet}}

@@ -1,4 +1,6 @@
 
 @import "ember-bootstrap/bootstrap";
 
+// склеитс все в один файл /assets/emberjs-webapp.css (по названию проекта)
 @import "./styles";
+@import "./tagsinput";

@@ -1,0 +1,78 @@
+{
+  "speakers": [
+    {
+      "id": 1,
+      "firstName": "Иван",
+      "lastName": "Седельников",
+      "secName": "Семенович"
+    },
+    {
+      "id": 2,
+      "firstName": "Мария",
+      "lastName": "Гладких",
+      "secName": "Ивановна"
+    },
+    {
+      "id": 3,
+      "firstName": "Анатолий",
+      "lastName": "Белозерцев",
+      "secName": "Петрович"
+    },
+    {
+      "id": 4,
+      "firstName": "Генрих",
+      "lastName": "Абашев",
+      "secName": "Виталиевич"
+    },
+    {
+      "id": 5,
+      "firstName": "Антонина",
+      "lastName": "Богословская",
+      "secName": "Леопольдовна"
+    },
+    {
+      "firstName": "22",
+      "lastName": "11",
+      "secName": "33",
+      "id": 6
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "bookName": "Кое-где и кое-как",
+      "authorFirstName": "Иван",
+      "authorLastName": "Иванов",
+      "pageNumber": "125",
+      "tags": [
+        "суперкнига",
+        "программирование"
+      ],
+      "rating": 25,
+      "remarkURL": ""
+    },
+    {
+      "id": 2,
+      "bookName": "Иван Васильевич меняет профессию",
+      "authorFirstName": "Семен",
+      "authorLastName": "Иванов",
+      "pageNumber": "200",
+      "tags": [
+        "фантастика",
+        "приключения"
+      ],
+      "rating": 78,
+      "remarkURL": ""
+    },
+    {
+      "bookName": "sd",
+      "authorFirstName": "dd",
+      "authorLastName": "asd",
+      "pageNumber": "34",
+      "tags": [],
+      "rating": "43",
+      "remarLink": "",
+      "id": 3
+    }
+  ]
+}
