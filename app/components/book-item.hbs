@@ -10,7 +10,9 @@
                 <div><strong>Количество страниц</strong>: {{@pageNumber}}</div>
                 <div><strong>Теги</strong>:
                     {{#each @tags as |tag|}}
-                        <a href="#" class="tag-link"><span class="small">#{{tag}} </span></a>
+                        {{!--<a href="#" class="tag-link"><span class="small">#{{tag}} </span></a>--}}
+                        <LinkTo @route="books" @query={{hash searchtag=tag}} class="tag-link">#{{tag}}</LinkTo>
+                        {{!--<button type="button" class="btn btn-outline-primary mr-2" onclick={{action @searchTagBooks tag}}>#{{tag}}</button>--}}
                     {{/each}}
                 </div>
             </li>
@@ -21,7 +23,7 @@
                     </div>
                     <div class="col">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: {{@rating}}%;" aria-valuenow="{{@rating}}" aria-valuemin="0" aria-valuemax="100">{{@rating}}%</div>
+                            <div class="progress-bar" role="progressbar" style="{{rating-style @rating}}" aria-valuenow="{{@rating}}" aria-valuemin="0" aria-valuemax="100">{{@rating}}%</div>
                         </div>
                     </div>
                 </div>

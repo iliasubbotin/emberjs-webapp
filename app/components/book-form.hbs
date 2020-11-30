@@ -1,9 +1,9 @@
-<form {{on "submit" @saveBook}} class="edit-form">
+<form {{on "submit" saveBook}} class="edit-form">
     <div class="form-group row">
         <label for="inputTitle" class="col-sm-2 col-form-label">Название:</label>
         <div class="col-sm-10">
-            {{!-- <input type="text" class="form-control form-control-lg" id="inputTitle" placeholder="Полное название книги"> --}}
-            <Input @type="text" placeholder="Полное название книги" class="form-control form-control-lg" id="inputTitle" @value={{@bookName}}/>
+            {{!-- <Input @type="text" placeholder="Полное название книги" class="form-control form-control-lg" id="inputTitle" @value={{@bookName}}/> --}}
+            <input type="text" placeholder="Полное название книги" class="form-control form-control-lg" id="inputTitle" value="{{this.bookName}}" oninput={{action (mut this._bookName) value="target.value"}} />
         </div>
     </div>
     <div class="form-group row">
@@ -52,11 +52,14 @@
         <label for="inputTags" class="col-sm-2 col-form-label">Теги:</label>
         <div class="col-sm-10">
             {{!-- <input type="text" data-role="tagsinput" class="form-control" id="inputPatronymic" placeholder="#Теги через запятую" value="Amsterdam,Washington,Sydney,Beijing,Cairo"> --}}
+            {{!--
             <select multiple data-role="tagsinput" id="inputTags" class="bootstrap-tagsinput">
                 {{#each @tags as |tag|}}
                     <option value="{{tag}}" selected="selected">{{tag}}</option>
                 {{/each}}
             </select>
+            --}}
+            <InputTags @tags={{@tags}} @onChange={{this.changeTags}}/>
         </div>
     </div>
     <div class="form-group row">

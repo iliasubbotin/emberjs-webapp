@@ -8,19 +8,19 @@ export default class DataServiceService extends Service {
     async readSpeakers(searchValue) {
 //        let url = getOwner(this).application;
         let searchSegm = searchValue ? `?q=${searchValue}` : '';
-        let response = await fetch(`${config.APP.backEndUrl}/speakers${searchSegm}`);
+        let response = await fetch(`${config.APP.backEndURL}/speakers${searchSegm}`);
         return response.json();
     }
 
     async readSpeaker(id) {
 //        let url = getOwner(this).application;
-        let response = await fetch(`${config.APP.backEndUrl}/speakers/${id}`);
+        let response = await fetch(`${config.APP.backEndURL}/speakers/${id}`);
         return response.json();
     }
 
     async changeSpeaker(speaker) {
 //        let url = getOwner(this).application;
-        return await fetch(`${config.APP.backEndUrl}/speakers/${speaker.id}`, {
+        return await fetch(`${config.APP.backEndURL}/speakers/${speaker.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ export default class DataServiceService extends Service {
 
     async craeteSpeaker(speaker) {
 //        let url = getOwner(this).application;
-        return await fetch(`${config.APP.backEndUrl}/speakers`, {
+        return await fetch(`${config.APP.backEndURL}/speakers`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ export default class DataServiceService extends Service {
 
     async deleteSpeaker(id) {
 //        let url = getOwner(this).application;
-        return await fetch(`${config.APP.backEndUrl}/speakers/${id}`, {
+        return await fetch(`${config.APP.backEndURL}/speakers/${id}`, {
             method: 'DELETE'
         });
     }
@@ -50,19 +50,19 @@ export default class DataServiceService extends Service {
     async readBooks(searchValue, searchTagValue) {
 //        let url = getOwner(this).application;
         let searchSegm = searchValue ? `?q=${searchValue}` : (searchTagValue? `?tags_like=${searchTagValue}` : '');
-        let response = await fetch(`${config.APP.backEndUrl}/books${searchSegm}`);
+        let response = await fetch(`${config.APP.backEndURL}/books${searchSegm}`);
         return response.json();
     }
 
     async readBook(id) {
 //        let url = getOwner(this).application;
-        let response = await fetch(`${config.APP.backEndUrl}/books/${id}`);
+        let response = await fetch(`${config.APP.backEndURL}/books/${id}`);
         return response.json();
     }
 
     async changeBook(book) {
 //        let url = getOwner(this).application;
-        return await fetch(`${config.APP.backEndUrl}/books/${book.id}`, {
+        return await fetch(`${config.APP.backEndURL}/books/${book.id}`, {
             method: 'PATCH',
                 headers: {
                 'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ export default class DataServiceService extends Service {
 
     async createBook(book) {
 //        let url = getOwner(this).application;
-        return await fetch(`${config.APP.backEndUrl}/books`, {
+        return await fetch(`${config.APP.backEndURL}/books`, {
             method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
@@ -84,7 +84,7 @@ export default class DataServiceService extends Service {
 
     async deleteBook(id) {
 //        let url = getOwner(this).application;
-        return await fetch(`${config.APP.backEndUrl}/books/${id}`, {
+        return await fetch(`${config.APP.backEndURL}/books/${id}`, {
             method: 'DELETE'
         });
     }

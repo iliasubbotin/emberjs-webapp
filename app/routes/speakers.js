@@ -1,15 +1,50 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import { later } from '@ember/runloop';
+import { action } from "@ember/object";
 
 export default class SpeakersRoute extends Route {
-    @service dataService;
+    @service store;
 
     queryParams = {
         search: {
             refreshModel: true
         }
+    };
+
+    async model({ search }) {
+        if (search) {
+            return this.store.query("speaker", { q: search });
+        }
+
+        return this.store.findAll("speaker");
     }
+
+    setupController(controller, model) {
+        super.setupController(...arguments);
+    }
+
+    resetController(controller, isExiting) {
+//        super.resetController(...arguments);
+
+        if (isExiting) {
+            controller.set('search', '');
+        }
+    }
+
+    @action
+    loading() {
+        return false;
+    }
+
+    /*
+     @service dataService;
+
+     queryParams = {
+     search: {
+     refreshModel: true
+     }
+     }
 
     async model({ search }) {
         let promise = new Promise((resolve, reject) => {
@@ -37,17 +72,17 @@ export default class SpeakersRoute extends Route {
             isLoading: true
         }
 
-//        return this.dataService.readSpeakers(search);
+//        return this.store.findAll("speaker");
     }
 
     setupController(controller, model) {
-        super.setupController(...arguments);
-
+//        super.setupController(...arguments);
         controller.isError = false;
         controller.isLoading = true;
     }
 
     resetController(controller, isExiting) {
+//        super.resetController(...arguments);
         if (isExiting) {
             controller.isError = false;
             controller.isLoading = false;
@@ -60,4 +95,5 @@ export default class SpeakersRoute extends Route {
 //    loading() {
 //        return false;
 //    }
+    */
 }

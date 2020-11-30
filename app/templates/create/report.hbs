@@ -1,0 +1,12 @@
+<div class="htop">
+    <h2 class="text-center">Добавление доклада</h2>
+    <ReportForm
+    @reportDate={{this.model.reportDate}}
+    @bookRequest={{this.model.bookRequest}}
+    @speaker={{this.model.speaker}}
+    @book={{this.model.book}}
+    @onSubmit={{this.saveReport}}
+    />
+</div>
+
+{{outlet}}

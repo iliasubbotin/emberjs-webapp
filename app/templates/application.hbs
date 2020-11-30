@@ -15,21 +15,24 @@
                     <a class="nav-link" href="index.html">Рабочий стол <span class="sr-only">(текущий)</span></a>
                 </li>
                 -->
-                <!--
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Встречи клуба</a>
+                    <LinkTo @route="meetings" @class="nav-link">Встречи клуба</LinkTo>
                 </li>
-                -->
                 <li class="nav-item">
                    <LinkTo @route="books" @class="nav-link">Книги</LinkTo>
                 </li>
                 <li class="nav-item">
                     <LinkTo @route="speakers" @class="nav-link">Спикеры</LinkTo>
                 </li>
+                <li class="nav-item">
+                    <LinkTo @route="reports" @class="nav-link">Доклады</LinkTo>
+                </li>
                 <!--
                 <li class="nav-item">
                     <a class="nav-link text-success" href="#">Оставить заявку</a>
                 </li>
+                -->
+                <!--
                 <li class="nav-item">
                     <a class="nav-link text-primary" href="#">Запланировать</a>
                 </li>

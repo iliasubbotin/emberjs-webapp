@@ -1,0 +1,97 @@
+<form {{on "submit" saveReport}} class="edit-form">
+    <div class="form-group row">
+        <label for="inputTitle" class="col-sm-2 col-form-label">Дата доклада:</label>
+        <div class="col-sm-10">
+{{!--
+            <input type="date" placeholder="Дата встречи" class="form-control form-control-lg" id="inputReportDate"
+                   value={{this.meetingDate}} onchange={{action (mut this.meetingDate) value="target.value"}}
+--}}
+            {{#if @isEdit}}
+                <input type="date" placeholder="Дата встречи" class="form-control form-control-lg" id="inputMeetingDate" disabled="disabled" value="{{this.meetingDate}}" oninput={{action "changeMeetingDate" value="target.value"}} />
+            {{else}}
+                <input type="date" placeholder="Дата встречи" class="form-control form-control-lg" id="inputMeetingDate" value="{{this.meetingDate}}" oninput={{action "changeMeetingDate" value="target.value"}} />
+            {{/if}}
+        </div>
+    </div>
+
+{{#if @isEdit}}
+    <div>Доклады</div>
+{{!--
+    <div class="input-group input-group-lg h-100">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="checkbox" checked=true />
+            </div>
+        </div>
+        <div class="form-control">
+            <h5 class="py-2">Спикер</h5>
+            <img src="images/speaker.jpg" class="rounded w-100" alt="Спикер">
+            <p>{{@report.speaker.lastName}} {{@report.speaker.firstName}}</p>
+        </div>
+        <div class="form-control">
+
+        </div>
+    </div>
+--}}
+
+    {{#each this.reports as |report|}}
+        {{!--
+        <div class="actions">
+            <LinkTo @route="edit.meeting.new-report" @model={{this.model.id}} @class="btn-secondary btn-add">
+            Add a report
+            </LinkTo>
+        </div>
+        --}}
+    <div class="form-group row">
+        <label for="inputPagesCount" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <MeetingReportItem
+                    @meetingId={{@meetingId}}
+                    @reportId={{report.id}}
+                    @report={{report}}
+                    @speaker={{report.speaker}}
+                    @book={{report.book}}
+                    />
+
+
+            {{!--{{report.meetingId}} Спикер: {{report.speaker.lastName}} {{report.speaker.firstName}}. Книга: {{report.book.bookName}} ({{report.book.authorLastName}} {{report.book.authorFirstName}})--}}
+{{!--
+            <PowerSelect
+            @placeholder="Поиск доклада"
+            @searchEnabled={{true}}
+            @onChange={{fn (mut this.selected)}}
+            @selected={{report}}
+            @loadingMessage="Waiting for the server...."
+            @search={{action "searchReport" this.meetingDate}}
+            @options={{this.loadreports}}
+            as |reportonly|
+            >
+            Спикер: {{reportonly.speaker.lastName}} {{reportonly.speaker.firstName}}. Книга: {{reportonly.book.bookName}} ({{reportonly.book.authorLastName}} {{reportonly.book.authorFirstName}})
+
+            <ReportItem
+            @reportId={{reportonly.id}}
+            @reportDate={{reportonly.reportDate}}
+            @bookRequest={{reportonly.bookRequest}}
+            @speaker={{reportonly.speaker}}
+            @book={{reportonly.book}}
+            @deleteReport={{this.deleteReport}}
+            />
+
+            </PowerSelect>
+--}}
+        </div>
+    </div>
+    {{/each}}
+{{/if}}
+
+    <div class="form-group row">
+        <div class="col-6">
+            <button type="submit" class="btn btn-outline-primary btn-lg">Сохранить</button>
+        </div>
+        <div class="col-6 text-right">
+            <LinkTo @route="meetings" @class="btn btn-outline-secondary btn-lg">Отмена</LinkTo>
+        </div>
+    </div>
+</form>
+
+{{yield}}

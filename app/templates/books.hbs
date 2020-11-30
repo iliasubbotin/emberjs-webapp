@@ -1,9 +1,15 @@
 <div class="htop">
     <h2 class="text-center">Книги</h2>
     <div class="form-row navbar-panel justify-content-between">
-        <div class="col-md-auto align-self-start">
+        <div class="col-md-auto">
+            <LinkTo @route="create.book" class="btn btn-outline-primary my-2">
+                <svg viewBox="0 0 16 16" class="bi bi-plus card-button" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+            </LinkTo>
+        </div>
+        <div class="col-md-auto">
             <div class="form-inline">
-                {{!-- <input class="form-control mr-2 search-long" type="search" placeholder="Найти по полям" aria-label="Найти по полям"> --}}
                 <input type="text" placeholder="Найти по полям" class="form-control mr-2 search-long" aria-label="Найти по полям" id="searchString" value="{{searchQuery}}" oninput={{action "setSearchQuery" value="target.value"}} />
                 <button type="button" class="btn btn-outline-primary my-2" id="searchAction" onclick={{action "searchBooks" searchQuery}}>Найти</button>
             </div>
@@ -12,12 +18,11 @@
             <div class="form-inline">
                 {{!-- <input class="form-control mr-2" type="search" placeholder="Поиск по тегам" aria-label="Найти по тегам"> --}}
                 <input type="text" placeholder="Поиск по тегам" class="form-control mr-2" aria-label="Поиск по тегам" id="searchTagString" value="{{searchTagQuery}}" oninput={{action "setSearchTagQuery" value="target.value"}} />
-                {{!-- <button class="btn btn-outline-primary my-2" type="submit">Поиск</button> --}}
-                <button type="button" class="btn btn-outline-primary mr-2" id="searchAction" onclick={{action "searchTagBooks" searchTagQuery}}>Найти</button>
-                <LinkTo @route="create.book" class="btn btn-outline-primary my-2">Создать</LinkTo>
+                <button type="button" class="btn btn-outline-primary my-2"  id="searchAction" onclick={{action "searchTagBooks" searchTagQuery}}>Найти</button>
             </div>
         </div>
     </div>
+
     {{#if this.isLoading}}
         <div class="welcome-page">
             <img src="./loading.gif" alt="">
@@ -27,7 +32,7 @@
                 <img src="./error.gif" alt="">
             </div>
     {{else}}
-        <div class="row row-cols-1 row-cols-md-3 fix-margin">
+        <div class="row row-cols-1 row-cols-md-3">
             {{#each this.model as |book|}}
                 <BookItem
                 @bookName={{book.bookName}}
@@ -39,6 +44,7 @@
                 @rating={{book.rating}}
                 @remarkLink={{book.remarkLink}}
                 @deleteBook={{this.deleteBook}}
+                @searchTagBooks={{this.searchTagBooks}}
                 />
             {{!--
             <div class="col mb-4">

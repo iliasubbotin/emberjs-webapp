@@ -1,0 +1,50 @@
+
+<div class="card mb-4">
+    <div class="row h-100 justify-content-between input-group">
+        <div class="input-group-prepend col-md-1 text-center">
+            <div class="input-group-text">
+                {{!--<input type="checkbox" aria-label="Checkbox for following text input">--}}
+                {{#if @report.meetingId}}
+                    {{!--<Input @type="checkbox" placeholder="" id="meetingCheck{{@meetingId}}" @checked={{@meetingId}}/>--}}
+                    <input type="checkbox" checked=true onclick={{action "checkMeeting" value="target.checked"}} value={{@meetingId}}/>
+                {{else}}
+                    {{!--<Input @type="checkbox" placeholder="" id="meetingCheck{{@meetingId}}" @checked=""/>--}}
+                    <input type="checkbox" onclick={{action "checkMeeting" value="target.checked"}} value=0/>
+                {{/if}}
+
+
+            </div>
+        </div>
+
+        <div class="col-md-2 text-center">
+            <h5 class="py-2">Спикер</h5>
+            {{!-- <img src="images/speaker.jpg" class="rounded w-100" alt="Спикер"> --}}
+            <p>{{@speaker.lastName}} {{@speaker.firstName}}</p>
+        </div>
+        <div class="col-md-3 text-center">
+            <h5 class="py-2">Книга</h5>
+            <p>{{@book.bookName}}</p>
+            <p>{{@book.authorLastName}} {{@book.authorFirstName}}</p>
+            {{!--
+            <div class="row align-items-center m-0">
+                <div class="col-md-auto pl-0">
+                    Оценка:
+                </div>
+                <div class="col p-0">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="{{rating-style @book.rating}}" aria-valuenow="{{@book.rating}}" aria-valuemin="0" aria-valuemax="100">{{@book.rating}}%</div>
+                    </div>
+                </div>
+            </div>
+            --}}
+        </div>
+        <div class="col-md-5">
+            <h5 class="text-center py-2">Отзыв</h5>
+            <p>
+                {{@report.bookRequest}}
+            </p>
+        </div>
+    </div>
+</div>
+
+{{yield}}

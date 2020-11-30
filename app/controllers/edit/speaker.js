@@ -1,34 +1,47 @@
 import Controller from '@ember/controller';
 import {action} from '@ember/object';
 import {inject as service} from '@ember/service';
-//import {tracked} from '@glimmer/tracking';
+import { assign } from '@ember/polyfills';
 
 export default class EditSpeakerController extends Controller {
-    @service dataService;
-//    @firstName = this.model.firsName;
+    @service store;
 
     @action
-    async saveSpeaker(e) {
-        e.preventDefault();
+    async saveSpeaker(speacker) {
+        try {
+            assign(this.model, speacker);
+            await this.model.save();
 
-//        console.log(this.model);
-        await this.dataService.changeSpeaker(this.model);
+            this.transitionToRoute('speakers.index');
 
-        this.transitionToRoute('speakers');
+//            let speaker = this.store.createRecord('speaker', data);
+//
+//            speaker.save();
+
+//            this.transitionToRoute('speakers.index');
+        }
+        catch(e) {
+            this.send('error', e);
+        }
     }
 
-//    @action
-//    changeFirsName(firstName) {
-//        this.model.firstName = firstName;
-//    }
+    /*
+    @service dataService;
 
-//    @action
-//    changeLastName(lastName) {
-//        this.model.lastName = lastName;
-//    }
+    @action
+    async saveSpeaker(speacker) {
+        let speakerToSave = Object.assign({}, speacker);
+        speakerToSave.id = this.model.id;
 
-//    @action
-//    changeSecName(secName) {
-//        this.model.secName = secName;
-//    }
+        try {
+            await this.dataService.changeSpeaker(speakerToSave);
+
+            this.transitionToRoute('speakers');
+        }
+        catch(e) {
+            this.send('error', e);
+        }
+    }
+    */
+
 }

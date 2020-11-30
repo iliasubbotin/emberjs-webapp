@@ -31,48 +31,164 @@
       "secName": "Леопольдовна"
     },
     {
-      "firstName": "22",
-      "lastName": "11",
-      "secName": "33",
-      "id": 6
+      "id": 6,
+      "firstName": "Сергей",
+      "lastName": "ИваноFF",
+      "secName": "Олегович"
+    },
+    {
+      "id": 7,
+      "firstName": "Антон",
+      "lastName": "ИгнатовFF",
+      "secName": "Петрович"
     }
   ],
   "books": [
     {
       "id": 1,
-      "bookName": "Кое-где и кое-как",
-      "authorFirstName": "Иван",
-      "authorLastName": "Иванов",
-      "pageNumber": "125",
+      "bookName": "Подсознание может все!",
+      "authorFirstName": "Джон",
+      "authorLastName": "Кехо",
+      "pageNumber": 125,
       "tags": [
-        "суперкнига",
-        "программирование"
+        "психология",
+        "сознание"
       ],
       "rating": 25,
       "remarkURL": ""
     },
     {
       "id": 2,
-      "bookName": "Иван Васильевич меняет профессию",
-      "authorFirstName": "Семен",
-      "authorLastName": "Иванов",
-      "pageNumber": "200",
+      "bookName": "100 записок о развитии",
+      "authorFirstName": "Петр",
+      "authorLastName": "Осипов",
+      "pageNumber": 200,
       "tags": [
-        "фантастика",
-        "приключения"
+        "самопознание",
+        "сознание",
+        "саморазвитие"
       ],
-      "rating": 78,
+      "rating": 60,
       "remarkURL": ""
     },
     {
-      "bookName": "sd",
-      "authorFirstName": "dd",
-      "authorLastName": "asd",
-      "pageNumber": "34",
-      "tags": [],
-      "rating": "43",
-      "remarLink": "",
-      "id": 3
+      "id": 3,
+      "bookName": "Не тупи. Только тот, кто ежедневно работает над собой, живет жизнью мечты",
+      "authorFirstName": "Джен",
+      "authorLastName": "Синсеро",
+      "pageNumber": 208,
+      "tags": [
+        "треннинг",
+        "психология"
+      ],
+      "rating": 75,
+      "remarkURL": "https://www.labirint.ru/books/730479/"
+    },
+    {
+      "id": 4,
+      "bookName": "Накопительный эффект. От поступка - к привычке, от привычки - к выдающимся результатам",
+      "authorFirstName": "Харди",
+      "authorLastName": "Даррен",
+      "pageNumber": 224,
+      "tags": [
+        "самопознание",
+        "успех",
+        "саморазвитие",
+        "накопительныйэффект"
+      ],
+      "rating": 63,
+      "remarkURL": "https://www.labirint.ru/books/747099/"
+    },
+    {
+      "id": 5,
+      "bookName": "Игра на нервах. Человек эмоциональный",
+      "authorFirstName": "Геншафт",
+      "authorLastName": "Евгений",
+      "pageNumber": 320,
+      "tags": [
+        "психология",
+        "эмоции"
+      ],
+      "rating": 78,
+      "remarkURL": "https://www.labirint.ru/books/768764/"
+    },
+    {
+      "id": 6,
+      "bookName": " Как перестать беспокоиться и начать жить",
+      "authorFirstName": "Дейл",
+      "authorLastName": "Карнеги",
+      "pageNumber": 416,
+      "tags": [
+        "поведение",
+        "социализация",
+        "жизнь"
+      ],
+      "rating": 92,
+      "remarkURL": "https://www.labirint.ru/books/139907/"
+    },
+    {
+      "id": 7,
+      "bookName": "Гении и аутсайдеры",
+      "authorFirstName": "Малкольм",
+      "authorLastName": "Гладуэлл",
+      "pageNumber": 176,
+      "tags": [
+        "Интеллект",
+        "обучение"
+      ],
+      "rating": 55
+    }
+  ],
+  "reports": [
+    {
+      "reportDate": "2020-11-27T19:00:00.000Z",
+      "bookRequest": "тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест ",
+      "speakerId": 3,
+      "bookId": 6,
+      "meetingId": 1,
+      "id": 5
+    },
+    {
+      "reportDate": "2020-11-27T19:00:00.000Z",
+      "bookRequest": "тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест ",
+      "speakerId": 4,
+      "bookId": 1,
+      "meetingId": 1,
+      "id": 6
+    },
+    {
+      "reportDate": "2020-11-29T19:00:00.000Z",
+      "bookRequest": "1",
+      "speakerId": 7,
+      "bookId": 3,
+      "id": 7,
+      "meetingId": 0
+    },
+    {
+      "reportDate": "2020-11-29T19:00:00.000Z",
+      "bookRequest": "2",
+      "speakerId": 4,
+      "bookId": 4,
+      "id": 8,
+      "meetingId": 0
+    },
+    {
+      "reportDate": "2020-11-29T19:00:00.000Z",
+      "bookRequest": "1",
+      "meetingId": 0,
+      "speakerId": 7,
+      "bookId": 5,
+      "id": 9
+    }
+  ],
+  "meetings": [
+    {
+      "id": 0,
+      "meetingDate": "2020-11-27T19:00:00.000Z"
+    },
+    {
+      "id": 1,
+      "meetingDate": "2020-11-27T19:00:00.000Z"
     }
   ]
 }

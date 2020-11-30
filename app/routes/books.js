@@ -1,8 +1,47 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import { action } from "@ember/object";
 import { later } from '@ember/runloop';
 
 export default class BooksRoute extends Route {
+    @service store;
+
+    queryParams = {
+        search: {
+            refreshModel: true
+        },
+        searchtag: {
+            refreshModel: true
+        }
+    }
+
+    async model({ search,  searchtag}) {
+        if (search) {
+            return this.store.query("book", { q: search });
+        } else if(searchtag) {
+            return this.store.query("book", { tags_like: searchtag });
+        }
+
+        return this.store.findAll("book");
+    }
+
+    setupController(controller, model) {
+        super.setupController(...arguments);
+    }
+
+    resetController(controller, isExiting) {
+        if (isExiting) {
+            controller.set('search', '');
+            controller.set('searchtag', '');
+        }
+    }
+
+    @action
+    loading() {
+        return false;
+    }
+
+    /*
     @service dataService;
 
     queryParams = {
@@ -62,4 +101,5 @@ export default class BooksRoute extends Route {
 
         }
     }
+    */
 }

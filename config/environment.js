@@ -21,8 +21,9 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
         rootURL: '/emberjs-webapp',
-//        backEndUrl: 'http://localhost:3000'
-        backEndUrl: 'https://my-json-server.typicode.com/iliasubbotin/webapp_db'
+//        backEndURL: 'http://localhost:3000'
+        backEndURL: 'https://webapp-db-heroku.herokuapp.com'
+//        backEndUrl: 'https://my-json-server.typicode.com/iliasubbotin/webapp_db'
     }
   };
 

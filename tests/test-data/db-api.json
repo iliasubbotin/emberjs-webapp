@@ -1,0 +1,158 @@
+{
+  "speakers": {
+      "data": [
+          {
+              "id": 1,
+              "type": "speaker",
+              "attributes": {
+                  "first-name": "Иван",
+                  "last-name": "Седельников",
+                  "sec-name": "Семенович"
+              }
+          },
+          {
+              "id": 2,
+              "type": "speaker",
+              "attributes": {
+                  "first-name": "Мария",
+                  "last-name": "Гладких",
+                  "sec-name": "Ивановна"
+              }
+          },
+          {
+              "id": 3,
+              "type": "speaker",
+              "attributes": {
+                  "first-name": "Анатолий",
+                  "last-name": "Белозерцев",
+                  "sec-name": "Петрович"
+              }
+          },
+          {
+              "id": 4,
+              "type": "speaker",
+              "attributes": {
+                  "first-name": "Генрих",
+                  "last-name": "Абашев",
+                  "sec-name": "Виталиевич"
+              }
+          },
+          {
+              "id": 5,
+              "type": "speaker",
+              "attributes": {
+                  "first-name": "Антонина",
+                  "last-name": "Богословская",
+                  "sec-name": "Леопольдовна"
+              }
+          },
+          {
+              "id": 6,
+              "type": "speaker",
+              "attributes": {
+                  "first-name": "Сергей",
+                  "last-name": "Ивано",
+                  "sec-name": "Олегович"
+              }
+          },
+          {
+              "id": 7,
+              "type": "speaker",
+              "attributes": {
+                  "first-name": "Антон",
+                  "last-name": "Игнатов",
+                  "sec-name": "Петрович"
+              }
+          }
+      ]
+  },
+
+  "books": {
+      "data": [
+          {
+              "id": 1,
+              "type": "book",
+              "attributes": {
+                  "bookName": "Подсознание моет все!",
+                  "authorFirstName": "Джон",
+                  "authorLastName": "Кехо",
+                  "pageNumber": 125,
+                  "tags": [
+                      "псилогия",
+                      "сознание"
+                  ],
+                  "rating": 25,
+                  "remarkURL": ""
+              }
+          },
+          {
+              "id": 2,
+              "type": "book",
+              "attributes": {
+                  "bookName": "100 записок о развитии",
+                  "authorFirstName": "Петр",
+                  "authorLastName": "Осипов",
+                  "pageNumber": 200,
+                  "tags": [
+                      "самопознание",
+                      "сознание",
+                      "саморазвитие"
+                  ],
+                  "rating": 60,
+                  "remarkURL": ""
+              }
+          },
+          {
+              "id": 3,
+              "type": "book",
+              "attributes": {
+                  "bookName": "Не тупи. Только тот, кто ежедневно работает над собой, живет жизнью мечты",
+                  "authorFirstName": "Джен",
+                  "authorLastName": "Синсеро",
+                  "pageNumber": 208,
+                  "tags": [
+                      "треннинг",
+                      "психология"
+                  ],
+                  "rating": 75,
+                  "remarkURL": "https://www.labirint.ru/books/730479/"
+              }
+          },
+          {
+              "id": 4,
+              "type": "book",
+              "attributes": {
+                  "bookName": "Накопительный эффект. От поступка - к привычке, от привычки - к выдающимся результатам",
+                  "authorFirstName": "Харди",
+                  "authorLastName": "Даррен",
+                  "pageNumber": 224,
+                  "tags": [
+                      "самопознание",
+                      "успех",
+                      "саморазвитие",
+                      "накопительныйэффект"
+                  ],
+                  "rating": 63,
+                  "remarkURL": "https://www.labirint.ru/books/747099/"
+              }
+          },
+          {
+              "id": 5,
+              "type": "book",
+              "attributes": {
+                  "bookName": "Игра на нервах. Человек эмоциональный",
+                  "authorFirstName": "Геншафт",
+                  "authorLastName": "Евгений",
+                  "pageNumber": 320,
+                  "tags": [
+                      "психология",
+                      "эмоции"
+                  ],
+                  "rating": 78,
+                  "remarkURL": "https://www.labirint.ru/books/768764/"
+              }
+          }
+      ]
+  }
+
+}

@@ -1,0 +1,10 @@
+<div class="htop">
+    <h2 class="text-center">Добавление встречи клуба</h2>
+    <MeetingForm
+    @meetingDate={{this.model.meetingDate}}
+    @reports={{this.model.reports}}
+    @onSubmit={{this.saveMeeting}}
+    />
+</div>
+
+{{outlet}}

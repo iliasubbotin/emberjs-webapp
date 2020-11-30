@@ -1,0 +1,57 @@
+<form {{on "submit" saveReport}} class="edit-form">
+    <div class="form-group row">
+        <label for="inputTitle" class="col-sm-2 col-form-label">Дата доклада:</label>
+        <div class="col-sm-10">
+            {{!--<Input @type="date" placeholder="Дата доклада" class="form-control form-control-lg" id="inputReportDate" @value="{{this.reportDate}}"/>--}}
+            <input type="date" placeholder="Дата доклада" class="form-control form-control-lg" id="inputReportDate" value={{this.reportDate}} onchange={{action (mut this.reportDate) value="target.value"}} />
+{{!--
+            <div class="datepicker datepicker-meeting date input-group p-0">
+                <input type="date" placeholder="Дата..." class="form-control" id="inputReportDate" value="{{this.reportDate}}" onchange={{action (mut this.reportDate) value="target.value"}}>
+                <div class="input-group-append">
+								<span class="input-group-text px-4">
+									<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clock" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm8-7A8 8 0 1 1 0 8a8 8 0 0 1 16 0z"/>
+                                        <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+                                    </svg>
+								</span>
+                </div>
+            </div>
+--}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputAuthor" class="col-sm-2 col-form-label">Отзыв по книге:</label>
+        <div class="col-sm-10">
+            <Input @type="textarea" placeholder="Отзыв по книге" class="form-control form-control-lg" id="inputBookRequest" @value={{this.bookRequest}}/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputAuthor" class="col-sm-2 col-form-label">Спикер:</label>
+        <div class="col-sm-10">
+            {{!--<Input @type="text" placeholder="Имя автора" class="form-control form-control-lg" id="inputAuthorLastName" @value={{@authorLastName}}/>--}}
+                    <PowerSelect @placeholder="Поиск спикера" @searchEnabled={{true}} @onChange={{fn (mut this.speaker)}} @selected={{this.speaker}} @search={{action "searchSpeaker"}} as |speaker|>
+                    {{speaker.lastName}} {{speaker.firstName}} {{speaker.secName}}
+                    </PowerSelect>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPagesCount" class="col-sm-2 col-form-label">Книга:</label>
+        <div class="col-sm-10">
+            {{!--<Input @type="number" placeholder="Количество страниц книги" class="form-control form-control-lg" id="inputPagesCount" @value={{@pageNumber}}/>--}}
+                <PowerSelect @placeholder="Поиск книги" @searchEnabled={{true}} @onChange={{fn (mut this.book)}} @selected={{this.book}} @search={{action "searchBook"}} as |book|>
+                {{book.bookName}} ({{book.authorLastName}} {{book.authorFirstName}})
+                </PowerSelect>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-6">
+            <button type="submit" class="btn btn-outline-primary btn-lg">Сохранить</button>
+        </div>
+        <div class="col-6 text-right">
+            <LinkTo @route="reports" @class="btn btn-outline-secondary btn-lg">Отмена</LinkTo>
+        </div>
+    </div>
+</form>
+
+{{yield}}
